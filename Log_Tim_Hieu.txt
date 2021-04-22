@@ -13,3 +13,10 @@
 - public
     + các Asset như image, đặt trong folder public, "/" là đường dẫn tự động nếu muốn thêm một image, tương tự như folder page
     + <Image /> phải có width và height. 
+- component <Head> dùng để thay modify head của page
+
+
+
+
+đọc tới
+https://nextjs.org/learn/basics/assets-metadata-css/css-styling

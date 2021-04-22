@@ -1,0 +1,15 @@
+- Server của nextjs có tính năng Fast Refresh: Reload lại component của react
+    + Code và sẽ tự động browser cập nhật lại.
+- Routing 
+    + Một file được thêm vào folder 'pages' thì hiểu là một route
+    + index.js mặc định là route đầu
+    + Có thể tạo thêm folder lồng trong folder page, nó vẫn tự động hiểu.
+    + Component tên là Link có href để chuyển các pages mà không cần browser không cần load lại (khác với <a/>),
+         mặc định nếu href="/" thì sẽ route tới index.js
+         + Mỗi trang trong  nextjs load độc lập, nên nếu một page bị lỗi, các page khác vẫn hoạt động. 
+         + Component 'Link' cho phép browser load trước page đó dưới background, lúc click vào thì nó gần như bật lên ngay lập tức (cơ chế prefetching)
+         + Nhưng nếu muốn thêm className cho Link thì không được, phải bỏ vào thẻ <a> ở trong <Link>
+    +{' '} Thêm kí tự khoảng trắng.
+- public
+    + các Asset như image, đặt trong folder public, "/" là đường dẫn tự động nếu muốn thêm một image, tương tự như folder page
+    + <Image /> phải có width và height. 

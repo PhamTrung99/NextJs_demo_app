@@ -1,3 +1,4 @@
+- Function hook module k dc viết arrow function
 - Server của nextjs có tính năng Fast Refresh: Reload lại component của react
     + Code và sẽ tự động browser cập nhật lại.
 - Routing 
@@ -12,11 +13,28 @@
     +{' '} Thêm kí tự khoảng trắng.
 - public
     + các Asset như image, đặt trong folder public, "/" là đường dẫn tự động nếu muốn thêm một image, tương tự như folder page
-    + <Image /> phải có width và height. 
+    + <Image /> phải có width và height (hoặc layout="fill"), src mặc định phải là"/image" (từ bất kì đâu)tự động dẫn vào thư mục image trong folder public
 - component <Head> dùng để thay modify head của page
+- library styled-jsx hỗ trợ viết CSS như một react component
+    + Lưu ý để sử dụng CSS module, phải đặt tên file có đuôi là .module.css
+    + điểm hay là className của css module sẽ tự genarate ra khác nhau nên không thể bị trùng tên className
+- Globall CSS chỉ được thêm vào trong file pages/_app.js, sẽ affect lên tất cả các site
+- module className - đọc document ở đây https://github.com/JedWatson/classnames
+- thư viện PostCSS 
+- nextjs hỗ trợ import file Sass qua thư viện npm i sass
+- Cơ chế pre-rendering của nextjs: một app react truyền thống (không có nextjs) sẽ bắt buộc phải bật JS để load page(nếu tắt JS thì không hiển thị luôn)
+    + thay vì đợi JS load xong, client mới thấy nội dung page, thì cơ chế này sẽ load hết html trước, sau đó JS load sau sẽ làm cho page đó
+    tương tác được => client sẽ nhìn thấy content của trang trước(kể cả CSS), rồi sau đó tương tác sau
+    + Có hai hình thức của Pre-rendering: 
+            >>>Static Generation: pre-render html ở thời điểm build app, sau đó sử dụng lại ở mỗi request (recommend cái này hơn)
+            >>>Server-side Rendering: Ở mỗi request gửi lên thì generate lại html
+    + Có thể cài hình thức nào cho page riêng nhau cũng được, đối với page cần upadate data liên tục thì dùng hình thức 2.
+    + Nếu page cần external data (api, read db,...) mà vẫn sử dụng static genaration thì phải export một fucntion là getStaticProps 
+     , func này sẽ bào cho nextjs biết"Có phụ thuộc một số data, hãy đảm bảo load tao khi build app".
+- Thư viện npm gray-matter giúp parse dữ liệu trong markdownfile (file viết theo kiểu Yaml)
 
 
 
 
 đọc tới
-https://nextjs.org/learn/basics/assets-metadata-css/css-styling
+https://nextjs.org/learn/basics/data-fetching/blog-data

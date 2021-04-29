@@ -26,7 +26,7 @@ export default function Home({allPostsData}) {
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
          </p>
         <Alert type='success'>Success</Alert>
-        {console.log(allPostsData)}
+        {/* {console.log(allPostsData)} */}
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>

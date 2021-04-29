@@ -29,12 +29,19 @@
             >>>Static Generation: pre-render html ở thời điểm build app, sau đó sử dụng lại ở mỗi request (recommend cái này hơn)
             >>>Server-side Rendering: Ở mỗi request gửi lên thì generate lại html
     + Có thể cài hình thức nào cho page riêng nhau cũng được, đối với page cần upadate data liên tục thì dùng hình thức 2.
-    + Nếu page cần external data (api, read db,...) mà vẫn sử dụng static genaration thì phải export một fucntion là getStaticProps 
+    + Nếu page cần external data (api, read db,...) mà vẫn sử dụng static genaration thì phải tạo một fucntion là getStaticProps 
      , func này sẽ bào cho nextjs biết"Có phụ thuộc một số data, hãy đảm bảo load tao khi build app".
 - Thư viện npm gray-matter giúp parse dữ liệu trong markdownfile (file viết theo kiểu Yaml)
-
-
-
+- Khi dùng Serverside-Rendering thì tạo một func là getServerSideProps 
+- Có thể sử dụng ClientSide-Rendering cũng được(tức là server vẫn load html trước => gửi client, sau đó code JS(ex: ajax) trên client sẽ fetch data ngoài sau), tuỳ theo tình huống(ví dụ trang admin page)
+    + Và một nhóm nextjs đã tạo một react hook cho việc fetch data là SWR(fetching ở client-side)
+    , document của nó ở đây: https://swr.vercel.app/
+- Dynamic Routes:
+    + Để tạo dynamic route trong next thì. Tạo file [id].js (bắt buộc phải có ngoặc vuông).
+    + Trong file [id].js phải chứa: >Một react component render cái page này.
+				    >getStaticPaths trả về chuỗi giá trị cần thiết cho cái id.
+				    >getStaticProps fetch dữ liệu cần thiết cho từng page đó theo id.
+	
 
 đọc tới
-https://nextjs.org/learn/basics/data-fetching/blog-data
+https://nextjs.org/learn/basics/dynamic-routes/page-path-external-data

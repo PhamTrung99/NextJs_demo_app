@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import remark from 'remark'
 import html from 'remark-html'
 
+
 const postsDirectory = path.join(process.cwd(), 'posts');
 // Tham khảo đối tượng process trong nodejs ở đây: https://viettuts.vn/nodejs/doi-tuong-process-trong-nodejs
 // process.cwd() là trả về thư mục làm việc hiện tại của process

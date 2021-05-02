@@ -39,9 +39,15 @@
 - Dynamic Routes:
     + Để tạo dynamic route trong next thì. Tạo file [id].js (bắt buộc phải có ngoặc vuông).
     + Trong file [id].js phải chứa: >Một react component render cái page này.
-				    >getStaticPaths trả về chuỗi giá trị cần thiết cho cái id.
+				    >getStaticPaths trả về chuỗi giá trị paths cho cái id.
 				    >getStaticProps fetch dữ liệu cần thiết cho từng page đó theo id.
-	
+- Để render nội dung MarkDown file thì dùng thư viện npm remark 
+- Để format date dùng thư viện npm date-fns
+- 
+
+
+
+
 
 đọc tới
-https://nextjs.org/learn/basics/dynamic-routes/page-path-external-data
+https://nextjs.org/learn/basics/dynamic-routes/polishing-post-page
